@@ -1,23 +1,30 @@
 package com.EmployeeWage;
 class Employee{
-
-    private int wagePerHour;
-    private int hoursWorked;
-    private int workingDaysPerMonth;
-
-    // Constructor
-    public Employee(int wagePerHour, int hoursWorked, int workingDaysPerMonth) {
-        this.wagePerHour = wagePerHour;
-        this.hoursWorked = hoursWorked;
-        this.workingDaysPerMonth = workingDaysPerMonth;
-
+    static int wagePerHour = 20;
+    static int fullTimeHours = 8;
+    static int partTimeHours = 4;
+    int totalWage;
+    int totalHoursWorked;
+    int totalDaysWorked;
+    public Employee() {
+        this.totalWage = 0;
+        this.totalHoursWorked = 0;
+        this.totalDaysWorked = 0;
+    }
+    public void workFullTime() {
+        if (totalHoursWorked + fullTimeHours <= 100 && totalDaysWorked < 20) {
+            totalHoursWorked += fullTimeHours;
+            totalDaysWorked++;
+            totalWage += wagePerHour * fullTimeHours;
+        }
     }
 
-    public int calculateDailyWage() {
-        return wagePerHour * hoursWorked;
-    }
-    public int calculateMonthlyWage() {
-        return wagePerHour * hoursWorked*workingDaysPerMonth;
+    public void workPartTime() {
+        if (totalHoursWorked + partTimeHours <= 100 && totalDaysWorked < 20) {
+            totalHoursWorked += partTimeHours;
+            totalDaysWorked++;
+            totalWage += wagePerHour * partTimeHours;
+        }
     }
     public void checkAttendance(boolean isPresent) {
         if (isPresent) {
