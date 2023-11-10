@@ -7,6 +7,7 @@ public class employeeCheck {
         boolean isPresent = random.nextBoolean();
 
         Employee employee = new Employee(20,8);
+
         employee.checkAttendance(isPresent);
     }
 }
