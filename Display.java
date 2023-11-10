@@ -9,6 +9,7 @@ class Employee{
         this.wagePerHour = wagePerHour;
         this.hoursWorked = hoursWorked;
     }
+
     public int calculateDailyWage() {
         return wagePerHour * hoursWorked;
     }
