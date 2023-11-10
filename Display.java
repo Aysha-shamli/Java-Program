@@ -3,15 +3,21 @@ class Employee{
 
     private int wagePerHour;
     private int hoursWorked;
+    private int workingDaysPerMonth;
 
     // Constructor
-    public Employee(int wagePerHour, int hoursWorked) {
+    public Employee(int wagePerHour, int hoursWorked, int workingDaysPerMonth) {
         this.wagePerHour = wagePerHour;
         this.hoursWorked = hoursWorked;
+        this.workingDaysPerMonth = workingDaysPerMonth;
+
     }
 
     public int calculateDailyWage() {
         return wagePerHour * hoursWorked;
+    }
+    public int calculateMonthlyWage() {
+        return wagePerHour * hoursWorked*workingDaysPerMonth;
     }
     public void checkAttendance(boolean isPresent) {
         if (isPresent) {
